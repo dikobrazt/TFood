@@ -15,22 +15,23 @@ class HomeViewController: UIViewController {
     
     private let cityLabel: UILabel = {
         let cityLabel = UILabel()
-        cityLabel.font = .SFBold(size: 17)
+        cityLabel.font = .SFBold(withSize: 17)
         cityLabel.text = "Гродно"
         return cityLabel
     }()
     
     private let arrowButton: UIButton = {
         let arrowButton = UIButton()
-        arrowButton.backgroundColor = .accentColor(alpha: 1)
+        arrowButton.backgroundColor = .accentColor(withOpacity: 1)
         return arrowButton
     }()
     
     private lazy var collectionView: UICollectionView = {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: createBannerSection())
-        collectionView.backgroundColor = .accentColor(alpha: 1)
+        collectionView.backgroundColor = .accentColor(withOpacity: 1)
         collectionView.register(ProductCell.self, forCellWithReuseIdentifier: "cellId")//временно
-        collectionView.isPagingEnabled = true
+        //collectiionView.separa
+       // collectionView.isPagingEnabled = true
         collectionView.delegate = self
         collectionView.dataSource = self
         return collectionView
@@ -38,7 +39,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .grayBackgroundColor(alpha: 1)
+        view.backgroundColor = .grayBackgroundColor(withOpacity: 1)
         arrangeSubViews()
         setUpViewConstraints()
     }
@@ -95,9 +96,9 @@ extension HomeViewController {
 //
 //        let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
 //        layoutSection.contentInsets = NSDirectionalEdgeInsets.init(top: 0, leading: 0, bottom: 0, trailing: 0)
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.3))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(190))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.25))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
         let layout = UICollectionViewCompositionalLayout(section: section)
@@ -115,6 +116,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
+       // cell.layer.borderWidth = 1
+        //cell.separa
+        //cell.layer.borderColor =
         return cell
     }
     

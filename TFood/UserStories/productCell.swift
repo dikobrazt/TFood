@@ -22,7 +22,7 @@ class ProductCell: UICollectionViewCell {
     private let nameOfProductLabel: UILabel = {
         let nameOfProductLabel = UILabel()
         nameOfProductLabel.text = "Ветчина и грибы"
-        nameOfProductLabel.font = .SFBold(size: 17)
+        nameOfProductLabel.font = .SFBold(withSize: 17)
         nameOfProductLabel.textColor = .black//.mainTextColor(alpha: 1)
         return nameOfProductLabel
     }()
@@ -30,20 +30,22 @@ class ProductCell: UICollectionViewCell {
     private let descriptionOfProductLabel: UILabel = {
         let descriptionOfProductLabel = UILabel()
         descriptionOfProductLabel.text = "Ветчина,шампиньоны, увеличинная порция моцареллы, томатный соус"
-        descriptionOfProductLabel.font = .SFRegular(size: 13)
-        descriptionOfProductLabel.textColor = .secondaryTextColor(alpha: 1)
+        descriptionOfProductLabel.font = .SFRegular(withSize: 13)
+        descriptionOfProductLabel.textColor = .secondaryTextColor(withOpacity: 1)
         descriptionOfProductLabel.lineBreakMode = .byWordWrapping
         descriptionOfProductLabel.numberOfLines = 0
         return descriptionOfProductLabel
     }()
     
-    private let priceButton:  UIButton = {
+    private let priceButton: UIButton = {
         let priceButton = UIButton()
         priceButton.setTitle("от 345р.", for: .normal)
-        priceButton.setTitleColor(.accentColor(alpha: 1), for: .normal)
+        priceButton.setTitleColor(.accentColor(withOpacity: 1), for: .normal)
         priceButton.setTitleColor(.white, for: .highlighted)
-        priceButton.titleLabel?.font = .SFRegular(size: 13)
-        priceButton.layer.borderColor = UIColor.accentColor(alpha: 1)?.cgColor
+        priceButton.setBackgroundColor(withColor: .white, forState: .normal)
+        priceButton.setBackgroundColor(withColor: .accentColor(withOpacity: 1) ?? .white, forState: .highlighted)
+        priceButton.titleLabel?.font = .SFRegular(withSize: 13)
+        priceButton.layer.borderColor = UIColor.accentColor(withOpacity: 1)?.cgColor
         priceButton.layer.borderWidth = 1
         priceButton.layer.cornerRadius = 6
         return priceButton
@@ -53,7 +55,7 @@ class ProductCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
-        roundSomeCorners(corners: [.topLeft, .topRight], radius: 15)
+        roundSomeCorners(forCorners: [.topLeft, .topRight], withRadius: 15)
         arrangeSubViews()
         setUpConstraints()
     }

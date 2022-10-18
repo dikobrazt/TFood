@@ -11,7 +11,7 @@ import UIKit
 
 extension UIView {
     
-    func roundSomeCorners(corners: UIRectCorner, radius: Double) {
+    func roundSomeCorners(forCorners corners: UIRectCorner, withRadius radius: Double) {
         let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask = CAShapeLayer()
         mask.path = path.cgPath
