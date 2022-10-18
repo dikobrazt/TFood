@@ -17,18 +17,20 @@ class HomeViewController: UIViewController {
         let cityLabel = UILabel()
         cityLabel.font = .SFBold(withSize: 17)
         cityLabel.text = "Гродно"
+        cityLabel.textColor = .black
         return cityLabel
     }()
     
     private let arrowButton: UIButton = {
         let arrowButton = UIButton()
         arrowButton.backgroundColor = .accentColor(withOpacity: 1)
+        arrowButton.setBackgroundImage(UIImage(named: "arrow"), for: .normal)
         return arrowButton
     }()
     
     private lazy var collectionView: UICollectionView = {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: createBannerSection())
-        collectionView.backgroundColor = .accentColor(withOpacity: 1)
+        collectionView.backgroundColor = .grayBackgroundColor(withOpacity: 0.5) //.accentColor(withOpacity: 1)
         collectionView.register(ProductCell.self, forCellWithReuseIdentifier: "cellId")//временно
         //collectiionView.separa
        // collectionView.isPagingEnabled = true
@@ -39,7 +41,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .grayBackgroundColor(withOpacity: 1)
+        view.backgroundColor = .grayBackgroundColor(withOpacity: 0.5) //.grayBackgroundColor(withOpacity: 1)
         arrangeSubViews()
         setUpViewConstraints()
     }
@@ -61,8 +63,8 @@ class HomeViewController: UIViewController {
         arrowButton.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(85)
             make.top.equalToSuperview().inset(60)
-            make.width.equalTo(14)
-            make.height.equalTo(8)
+            make.width.equalTo(20)
+            make.height.equalTo(20)
         }
         
         collectionView.snp.makeConstraints { make in
