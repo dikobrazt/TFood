@@ -1,0 +1,6 @@
+framework module Pods_TFood {
+  umbrella header "Pods-TFood-umbrella.h"
+
+  export *
+  module * { export * }
+}

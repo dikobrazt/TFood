@@ -53,7 +53,7 @@ class ProductCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
-        
+        roundSomeCorners(corners: [.topLeft, .topRight], radius: 15)
         arrangeSubViews()
         setUpConstraints()
     }
