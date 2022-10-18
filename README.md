@@ -1,7 +1,7 @@
 # TFood
 I started designing this app because it's very hard to find a good job these days
 
-This application solves the problem of home delivery of food
+This application solves the problem of food delivery 
 
 This app shows my ability to design nice UI's and just shows the level of my code!
 
