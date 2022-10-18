@@ -4,10 +4,23 @@
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Your location is needed</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SFUIText-Semibold.ttf</string>
+		<string>SFUIText-Regular.ttf</string>
+		<string>SFUIText-Medium.ttf</string>
+		<string>SFUIText-Bold.ttf</string>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string></string>
+	<key></key>
+	<string></string>
 	<key>CFBundleIdentifier</key>
 	<string></string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
+		<key></key>
+		<false/>
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<false/>
 		<key>UISceneConfigurations</key>
