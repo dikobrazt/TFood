@@ -10,7 +10,13 @@ import SnapKit
 
 
 
-class ProductCell: UICollectionViewCell {
+class ProductCell: UICollectionViewCell, ConfiguringCell {
+    static var reuseId: String = "cellId"
+    
+    func configure(with itemIdentifier: Int) {
+        print("123")
+    }
+    
     
     private let productImageView: UIImageView = {
        let productImageView = UIImageView()

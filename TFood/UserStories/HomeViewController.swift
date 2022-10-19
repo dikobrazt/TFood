@@ -32,12 +32,29 @@ class HomeViewController: UIViewController {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: createBannerSection())
         collectionView.backgroundColor = .grayBackgroundColor(withOpacity: 0.5) //.accentColor(withOpacity: 1)
         collectionView.register(ProductCell.self, forCellWithReuseIdentifier: "cellId")//временно
-        //collectiionView.separa
-       // collectionView.isPagingEnabled = true
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        reloadData()
         return collectionView
     }()
+    
+    private lazy var dataSource: UICollectionViewDiffableDataSource<SectionKind, Int> = {
+        let dataSource = UICollectionViewDiffableDataSource<SectionKind, Int>(collectionView: collectionView) { collectionView, indexPath, itemIdentifier in
+            let section = SectionKind(rawValue: indexPath.section)!
+            switch section {
+//            case .banner:
+//                <#code#>
+//            case .category:
+//                <#code#>
+//            case .catalog:
+//                <#code#>
+            default:
+                return self.configure(cellType: ProductCell.self, with: itemIdentifier, for: indexPath)
+            }
+        }
+        
+        return dataSource
+    }()
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +94,27 @@ class HomeViewController: UIViewController {
 
 
 
+//MARK: - ConfigureCollectionViewCell & Snapshot
+extension HomeViewController {
+    func configure<T: ConfiguringCell>(cellType: T.Type, with itemIdentifier: Int, for indexPath: IndexPath) -> T {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reuseId, for: indexPath) as? T else {
+            fatalError("ERROR::\(cellType)")
+        }
+        return cell
+    }
+    
+    func reloadData() {
+        var snapshot = NSDiffableDataSourceSnapshot<SectionKind, Int>()
+        let itemPerSection = 10
+        SectionKind.allCases.forEach { sectionKind in
+            snapshot.appendSections([sectionKind])
+            snapshot.appendItems([1,2,3,4,5,6,7,8,9,10], toSection: sectionKind)
+        }
+        dataSource.apply(snapshot, animatingDifferences: true)
+    }
+}
+
+
 //MARK: - CompositionalLayout
 extension HomeViewController {
 //    func createCompositionalLayout() -> UICollectionViewLayout {
@@ -88,16 +126,7 @@ extension HomeViewController {
     
     
     func createBannerSection() -> UICollectionViewCompositionalLayout {
-        //let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
-//        layoutItem.contentInsets = NSDirectionalEdgeInsets.init(top: 0, leading: 0, bottom: 0, trailing: 0)
-//
-//        let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-//        let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: layoutGroupSize, subitem: layoutItem, count: 1)
-//        layoutGroup.contentInsets = NSDirectionalEdgeInsets.init(top: 20, leading: 0.0, bottom: 0.0, trailing: 0.0)
-//        layoutGroup.interItemSpacing = .fixed(0)
-//
-//        let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
-//        layoutSection.contentInsets = NSDirectionalEdgeInsets.init(top: 0, leading: 0, bottom: 0, trailing: 0)
+       
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(190))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.25))
@@ -110,22 +139,23 @@ extension HomeViewController {
 
 
 
-//MARK: - DataSource & Delegate
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
-       // cell.layer.borderWidth = 1
-        //cell.separa
-        //cell.layer.borderColor =
-        return cell
-    }
-    
-    
-}
+//MARK: - Diffable DataSource & Delegate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

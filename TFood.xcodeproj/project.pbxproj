@@ -11,6 +11,8 @@
 		EA0AEF9C28FEC80500496069 /* productCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0AEF9B28FEC80500496069 /* productCell.swift */; };
 		EA0AEF9E28FF1FEB00496069 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0AEF9D28FF1FEB00496069 /* UIView + Extensions.swift */; };
 		EA0AEFA028FF399300496069 /* UIButton + Exttensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0AEF9F28FF399300496069 /* UIButton + Exttensions.swift */; };
+		EA0AEFA229000D6200496069 /* SectionKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0AEFA129000D6200496069 /* SectionKind.swift */; };
+		EA0AEFA429000F4B00496069 /* CofiguringCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0AEFA329000F4B00496069 /* CofiguringCellProtocol.swift */; };
 		EA841AD828F8D3C80080216D /* SFUIText-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA841ACC28F8D3C60080216D /* SFUIText-Medium.ttf */; };
 		EA841AD928F8D3C80080216D /* SFUIText-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA841ACD28F8D3C70080216D /* SFUIText-Heavy.ttf */; };
 		EA841ADA28F8D3C80080216D /* SFUIText-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA841ACE28F8D3C70080216D /* SFUIText-LightItalic.ttf */; };
@@ -41,6 +43,8 @@
 		EA0AEF9B28FEC80500496069 /* productCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productCell.swift; sourceTree = "<group>"; };
 		EA0AEF9D28FF1FEB00496069 /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
 		EA0AEF9F28FF399300496069 /* UIButton + Exttensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Exttensions.swift"; sourceTree = "<group>"; };
+		EA0AEFA129000D6200496069 /* SectionKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionKind.swift; sourceTree = "<group>"; };
+		EA0AEFA329000F4B00496069 /* CofiguringCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CofiguringCellProtocol.swift; sourceTree = "<group>"; };
 		EA841ACC28F8D3C60080216D /* SFUIText-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Medium.ttf"; sourceTree = "<group>"; };
 		EA841ACD28F8D3C70080216D /* SFUIText-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Heavy.ttf"; sourceTree = "<group>"; };
 		EA841ACE28F8D3C70080216D /* SFUIText-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-LightItalic.ttf"; sourceTree = "<group>"; };
@@ -128,19 +132,21 @@
 		EA841B0328F9ABBC0080216D /* UserStories */ = {
 			isa = PBXGroup;
 			children = (
-				EA841B0428F9AC2A0080216D /* TableView */,
+				EA841B0428F9AC2A0080216D /* CollectionView */,
 				EAA73DB927E10C7800FE995D /* HomeViewController.swift */,
-				EA0AEF9B28FEC80500496069 /* productCell.swift */,
 			);
 			path = UserStories;
 			sourceTree = "<group>";
 		};
-		EA841B0428F9AC2A0080216D /* TableView */ = {
+		EA841B0428F9AC2A0080216D /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
 				EA841B0528F9AC670080216D /* HeaderView.swift */,
+				EA0AEFA129000D6200496069 /* SectionKind.swift */,
+				EA0AEF9B28FEC80500496069 /* productCell.swift */,
+				EA0AEFA329000F4B00496069 /* CofiguringCellProtocol.swift */,
 			);
-			path = TableView;
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		EAD0B69527D9311000361306 = {
@@ -313,10 +319,12 @@
 			files = (
 				EAD0B6A227D9311000361306 /* AppDelegate.swift in Sources */,
 				EAA73DBA27E10C7800FE995D /* HomeViewController.swift in Sources */,
+				EA0AEFA429000F4B00496069 /* CofiguringCellProtocol.swift in Sources */,
 				EAD0B6AC27D9311000361306 /* TFood.xcdatamodeld in Sources */,
 				EA841AE828F8D65C0080216D /* UIColor + Extensions.swift in Sources */,
 				EA0AEFA028FF399300496069 /* UIButton + Exttensions.swift in Sources */,
 				EAD0B6A427D9311000361306 /* SceneDelegate.swift in Sources */,
+				EA0AEFA229000D6200496069 /* SectionKind.swift in Sources */,
 				EA0AEF9C28FEC80500496069 /* productCell.swift in Sources */,
 				EA841AE628F8D4090080216D /* UIIFont + Extensions.swift in Sources */,
 				EA0AEF9E28FF1FEB00496069 /* UIView + Extensions.swift in Sources */,
