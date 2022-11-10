@@ -31,7 +31,8 @@ class HomeViewController: UIViewController {
     private lazy var collectionView: UICollectionView = {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: createBannerSection())
         collectionView.backgroundColor = .grayBackgroundColor(withOpacity: 0.5) //.accentColor(withOpacity: 1)
-        collectionView.register(ProductCell.self, forCellWithReuseIdentifier: "cellId")//временно
+        collectionView.register(ProductCell.self, forCellWithReuseIdentifier: ProductCell.reuseId)//временно
+        collectionView.register(BannerCell.self, forCellWithReuseIdentifier: BannerCell.reuseId)
         reloadData()
         return collectionView
     }()
@@ -39,15 +40,19 @@ class HomeViewController: UIViewController {
     private lazy var dataSource: UICollectionViewDiffableDataSource<SectionKind, Int> = {
         let dataSource = UICollectionViewDiffableDataSource<SectionKind, Int>(collectionView: collectionView) { collectionView, indexPath, itemIdentifier in
             let section = SectionKind(rawValue: indexPath.section)!
+            print(section)
             switch section {
-//            case .banner:
-//                <#code#>
-//            case .category:
-//                <#code#>
-//            case .catalog:
-//                <#code#>
-            default:
+            case .banner:
+                return self.configure(cellType: BannerCell.self, with: itemIdentifier, for: indexPath)
+
+            case .category:
                 return self.configure(cellType: ProductCell.self, with: itemIdentifier, for: indexPath)
+            case .catalog:
+                print("qqqqqqqqqq")
+               return self.configure(cellType: ProductCell.self, with: itemIdentifier, for: indexPath)
+
+//            default:
+//                return self.configure(cellType: ProductCell.self, with: itemIdentifier, for: indexPath)
             }
         }
         
@@ -108,7 +113,7 @@ extension HomeViewController {
         let itemPerSection = 10
         SectionKind.allCases.forEach { sectionKind in
             snapshot.appendSections([sectionKind])
-            snapshot.appendItems([1,2,3,4,5,6,7,8,9,10], toSection: sectionKind)
+            snapshot.appendItems([1,2,3,4,5,6,7,8,9,10], toSection: sectionKind)//need fix!!!
         }
         dataSource.apply(snapshot, animatingDifferences: true)
     }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		909AA39B94AA48A8E40AB830 /* Pods_TFood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E324BEFCA541595B3F75A7BA /* Pods_TFood.framework */; };
+		EA082943291D6C3E00CD2513 /* banerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA082942291D6C3E00CD2513 /* banerCell.swift */; };
 		EA0AEF9C28FEC80500496069 /* productCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0AEF9B28FEC80500496069 /* productCell.swift */; };
 		EA0AEF9E28FF1FEB00496069 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0AEF9D28FF1FEB00496069 /* UIView + Extensions.swift */; };
 		EA0AEFA028FF399300496069 /* UIButton + Exttensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0AEF9F28FF399300496069 /* UIButton + Exttensions.swift */; };
@@ -40,6 +41,7 @@
 		83F04BE7173D63D1B1D82CB1 /* Pods-TFood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFood.release.xcconfig"; path = "Target Support Files/Pods-TFood/Pods-TFood.release.xcconfig"; sourceTree = "<group>"; };
 		A5EAE115FB1674F843AAE419 /* Pods-TFood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFood.debug.xcconfig"; path = "Target Support Files/Pods-TFood/Pods-TFood.debug.xcconfig"; sourceTree = "<group>"; };
 		E324BEFCA541595B3F75A7BA /* Pods_TFood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA082942291D6C3E00CD2513 /* banerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = banerCell.swift; sourceTree = "<group>"; };
 		EA0AEF9B28FEC80500496069 /* productCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productCell.swift; sourceTree = "<group>"; };
 		EA0AEF9D28FF1FEB00496069 /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
 		EA0AEF9F28FF399300496069 /* UIButton + Exttensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Exttensions.swift"; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				EA841B0528F9AC670080216D /* HeaderView.swift */,
 				EA0AEFA129000D6200496069 /* SectionKind.swift */,
 				EA0AEF9B28FEC80500496069 /* productCell.swift */,
+				EA082942291D6C3E00CD2513 /* banerCell.swift */,
 				EA0AEFA329000F4B00496069 /* CofiguringCellProtocol.swift */,
 			);
 			path = CollectionView;
@@ -322,6 +325,7 @@
 				EA0AEFA429000F4B00496069 /* CofiguringCellProtocol.swift in Sources */,
 				EAD0B6AC27D9311000361306 /* TFood.xcdatamodeld in Sources */,
 				EA841AE828F8D65C0080216D /* UIColor + Extensions.swift in Sources */,
+				EA082943291D6C3E00CD2513 /* banerCell.swift in Sources */,
 				EA0AEFA028FF399300496069 /* UIButton + Exttensions.swift in Sources */,
 				EAD0B6A427D9311000361306 /* SceneDelegate.swift in Sources */,
 				EA0AEFA229000D6200496069 /* SectionKind.swift in Sources */,
